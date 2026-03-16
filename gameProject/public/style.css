@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #2e1065);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.hidden {
+    display: none !important;
+}
+ 
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+    border-radius: 22px;
+ 
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.78),
+                        rgba(255, 255, 255, 0.78)),
+        url("cards-bg.jpg");
+ 
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+ 
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #111;
+}
+ 
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
+.form-section {
+    margin-bottom: 15px;
+}
+ 
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+ 
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+ 
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+ 
+.btn {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+ 
+.btn-primary { background: #2563eb; color: white; }
+.btn-success { background: #16a34a; color: white; }
+.btn-secondary { background: #6b7280; color: white; width: 100%; }
+.btn-danger { background: #dc2626; color: white; width: 100%; margin-top: 20px; }
+ 
+.btn:hover {
+    opacity: 0.9;
+}
+ 
+.divider {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+}
+ 
+.room-list {
+    max-height: 150px;
+    overflow-y: auto;
+}
+ 
+.room-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 10px 14px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+ 
+.room-item button {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+ 
+.room-item button:hover {
+    background-color: #15803d;
+}
+ 
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+ 
+.room-info {
+    background: #2563eb;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+ 
+.turn-indicator {
+    background: #fde047;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+ 
+.players-info {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+ 
+.player-card {
+    flex: 1;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+ 
+.player-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+ 
+.player-score {
+    color: #666;
+    font-size: 14px;
+}
+ 
+.player-card.active {
+    background: #dcfce7;
+    border: 2px solid #22c55e;
+}
+ 
+.game-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+ 
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+ 
+.card {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ccc, #423f3b);
+    color: white;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+ 
+.card:hover {
+    transform: scale(1.05);
+}
+ 
+.card-back {
+    font-size: 3rem;
+    font-weight: bold;
+}
+ 
+.card.flipped {
+    background: white;
+    color: #111;
+    border: 2px solid #000000;
+}
+ 
+.card.matched {
+    background: #bbf7d0;
+    cursor: default;
+    border: 2px solid #22c55e;
+    color: #0f172a;
+}
+ 
+.card.matched:hover {
+    transform: none;
+}
+ 
+.messages {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 12px;
+    height: 560px;
+    overflow-y: auto;
+}
+ 
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+ 
+.message.success {
+    background: #dcfce7;
+    color: #166534;
+    border-left: 3px solid #22c55e;
+}
+ 
+.message.info {
+    background: #dbeafe;
+    color: #1e40af;
+    border-left: 3px solid #3b82f6;
+}
+ 
+.message.warning {
+    background: #fef3c7;
+    color: #92400e;
+    border-left: 3px solid #f59e0b;
+}
+ 
+.message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 3px solid #ef4444;
+}
+ 
+@media (max-width: 900px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+   
+    .messages {
+        height: 200px;
+    }
+}
+ 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Pairs - Multiplayer Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.3/socket.io.min.js" 
+            integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" 
+            crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- ROOM CONTAINER -->
+    <div id="roomContainer" class="container">
+        <h1>Card Pairs Memory Game</h1>
+
+        <div id="roomScreen" class="screen">
+            <h2>Join or Create a Room</h2>
+
+            <div class="form-section">
+                <label for="playerName">Your Name:</label>
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+            </div>
+
+            <div class="form-section">
+                <label for="roomId">Room Name:</label>
+                <input type="text" id="roomId" placeholder="Enter room name" maxlength="20">
+            </div>
+
+            <div class="button-group">
+                <button id="createRoomBtn" class="btn btn-primary">Create Room</button>
+                <button id="joinRoomBtn" class="btn btn-success">Join Room</button>
+            </div>
+
+            <div class="divider">OR</div>
+
+            <button id="listRoomsBtn" class="btn btn-secondary">List Available Rooms</button>
+            <div id="roomList" class="room-list"></div>
+        </div>
+    </div>
+
+    <!-- GAME CONTAINER -->
+<div id="gameContainer" class="container hidden">
+
+    <h1>Card Pairs Memory Game</h1>
+
+    <div id="gameScreen" class="screen">
+
+        <!-- Header -->
+        <div class="game-header">
+            <div id="roomInfo" class="room-info"></div>
+            <div id="turnIndicator" class="turn-indicator"></div>
+        </div>
+
+        <!-- Players -->
+        <div id="playersInfo" class="players-info"></div>
+
+        <!-- GAME BOARD + CHAT -->
+        <div class="game-layout">
+
+            <div id="gameBoard" class="game-board"></div>
+
+            <div id="gameMessages" class="messages"></div>
+
+        </div>
+
+        <!-- Leave Button (PART OF GAME) -->
+        <button id="leaveRoomBtn" class="btn btn-danger">
+            Leave Room
+        </button>
+
+    </div>
+</div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
